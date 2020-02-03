@@ -4,8 +4,9 @@ using System;
 
 namespace Moneybox.App.Features
 {
-    public class WithdrawMoney
-    {
+
+	public class WithdrawMoney : IWithdrawMoney
+	{
         private IAccountRepository accountRepository;
         private INotificationService notificationService;
 

@@ -4,8 +4,8 @@ using System;
 
 namespace Moneybox.App.Features
 {
-    public class TransferMoney
-    {
+	public class TransferMoney : ITransferMoney
+	{
         private IAccountRepository accountRepository;
         private INotificationService notificationService;
 
