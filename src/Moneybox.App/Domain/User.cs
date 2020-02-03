@@ -1,6 +1,7 @@
 ﻿using System;
+using Moneybox.Model;
 
-namespace Moneybox.App
+namespace Moneybox.App.Domain
 {
 	public class User : IUser
 	{

@@ -1,6 +1,9 @@
-﻿using Moneybox.App.DataAccess;
-using Moneybox.App.Domain.Services;
+﻿using Moneybox.App.Domain.Services;
 using System;
+using Moneybox.App.Domain;
+using Moneybox.Model.DataAccess;
+using Moneybox.Model.Features;
+using Moneybox.Model.Services;
 
 namespace Moneybox.App.Features
 {

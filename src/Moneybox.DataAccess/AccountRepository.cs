@@ -1,6 +1,8 @@
 ﻿using System;
+using Moneybox.Model;
+using Moneybox.Model.DataAccess;
 
-namespace Moneybox.App.DataAccess
+namespace Moneybox.DataAccess
 {
 	public class AccountRepository : IAccountRepository
 	{

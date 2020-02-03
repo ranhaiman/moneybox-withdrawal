@@ -1,4 +1,6 @@
-﻿namespace Moneybox.App.Domain.Services
+﻿using Moneybox.Model.Services;
+
+namespace Moneybox.App.Domain.Services
 {
 	public class NotificationService : INotificationService
 	{

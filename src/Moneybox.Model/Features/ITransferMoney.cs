@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Moneybox.App.Features
+namespace Moneybox.Model.Features
 {
 	public interface ITransferMoney
 	{
