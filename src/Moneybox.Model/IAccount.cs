@@ -9,5 +9,8 @@ namespace Moneybox.Model
 		decimal Balance { get; set; }
 		decimal Withdrawn { get; set; }
 		decimal PaidIn { get; set; }
+
+		decimal ValidateSufficientFunds(decimal amount);
+		decimal ValidatedMaxPaidInAmount(decimal amount);
 	}
 }

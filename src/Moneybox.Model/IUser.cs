@@ -7,5 +7,8 @@ namespace Moneybox.Model
 		Guid Id { get; set; }
 		string Name { get; set; }
 		string Email { get; set; }
+
+		void NotifyUserUponLowBalance(decimal newBalance);
+		void NotifyUserCaseMaxTransferLimitReached(decimal paidIn);
 	}
 }
