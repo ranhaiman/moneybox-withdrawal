@@ -16,6 +16,7 @@ namespace Moneybox.App.Domain
         public decimal Withdrawn { get; set; }
 
         public decimal PaidIn { get; set; }
+
         public decimal ValidateSufficientFunds(decimal amount)
         {
 	        var fromBalance = Balance - amount;
