@@ -38,8 +38,11 @@ namespace MoneyboxTest
 			Assert.AreEqual(- amountToTransfer, _fromAccount.Withdrawn);
 			Assert.AreEqual(fromBalance - amountToTransfer, _fromAccount.Balance);
 
-			Assert.AreEqual(_fromAccountId, _fromAccount.Id);
+			Assert.AreEqual(_toAccountId, _toAccount.Id);
 			Assert.AreEqual(toBalance + amountToTransfer, _toAccount.Balance);
+
+			_accountRepositoryMock.Verify(x=>x.Update(_fromAccount));
+			_accountRepositoryMock.Verify(x=>x.Update(_toAccount));
 		}
 
 		[TestMethod]
@@ -51,7 +54,9 @@ namespace MoneyboxTest
 
 			transferMoney.Execute(_fromAccountId, _toAccountId, amountToTransfer);
 
-			_notificationServiceMock.Verify(x=>x.NotifyFundsLow(It.IsAny<string>()));
+			_notificationServiceMock.Verify(x=>x.NotifyFundsLow(_fromAccount.User.Email));
+			_accountRepositoryMock.Verify(x=>x.Update(_fromAccount));
+			_accountRepositoryMock.Verify(x=>x.Update(_toAccount));
 		}
 
 		[TestMethod]
@@ -65,7 +70,9 @@ namespace MoneyboxTest
 
 			transferMoney.Execute(_fromAccountId, _toAccountId, amountToTransfer);
 
-			_notificationServiceMock.Verify(x=>x.NotifyApproachingPayInLimit(It.IsAny<string>()));
+			_notificationServiceMock.Verify(x=>x.NotifyApproachingPayInLimit(_toAccount.User.Email));
+			_accountRepositoryMock.Verify(x=>x.Update(_fromAccount));
+			_accountRepositoryMock.Verify(x=>x.Update(_toAccount));
 		}
 
 		[TestMethod]

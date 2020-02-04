@@ -5,7 +5,7 @@ namespace Moneybox.App.Domain
 {
 	public class Account : IAccount
 	{
-        public const decimal PayInLimit = 4000m;
+		public const decimal PayInLimit = 4000m;
 
         public Guid Id { get; set; }
 
@@ -23,6 +23,17 @@ namespace Moneybox.App.Domain
 	        if (fromBalance < 0m)
 	        {
 		        throw new InvalidOperationException("Insufficient funds to make transfer");
+	        }
+
+	        return fromBalance;
+        }
+
+        public decimal ValidateSufficientWithdrawFunds(decimal amount)
+        {
+	        var fromBalance = Balance - amount;
+	        if (fromBalance < 0m)
+	        {
+		        throw new InvalidOperationException("Insufficient funds to make withdraw");
 	        }
 
 	        return fromBalance;

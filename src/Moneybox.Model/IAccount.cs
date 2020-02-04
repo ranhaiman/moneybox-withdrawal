@@ -12,5 +12,6 @@ namespace Moneybox.Model
 
 		decimal ValidateSufficientFunds(decimal amount);
 		decimal ValidatedMaxPaidInAmount(decimal amount);
+		decimal ValidateSufficientWithdrawFunds(decimal amount);
 	}
 }
