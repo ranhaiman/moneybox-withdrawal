@@ -24,3 +24,17 @@ As part of this process however, you should look to refactor some of the code in
 Once you have completed your work, send us a link to your public repository.
 
 Good luck!
+
+I’ve done the following changes:
+1. Decouple the Moneybox.App to three separate class libraries: Model, DataAccess and App. 
+   This is for better maintainability, testability and in case of replacing to different components (like data access).
+2. Refactoring the TransferMoney object by moving the account logic to the account object,
+   And also moving the user related logic to the user object.
+3. Implementing the WithdrawMoney object in the same way as TransferMoney object.
+4. Interduce DependencyInjection (although not being used).
+5. Add unit testing which helped with validating the exciting logic, validating the logic through refactoring and while the adding new logic.
+
+
+Things I would do next:
+1. Adding comments to the interfaces describing the business of the components.
+2. Creating business exceptions instead of using system exceptions.
